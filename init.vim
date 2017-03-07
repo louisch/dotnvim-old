@@ -6,6 +6,7 @@ let nvimdir = "/home/louis/.config/nvim"
 let bundles =
 \ [ "Valloric/YouCompleteMe"
 \ , "ltlollo/diokai"
+\ , "neovim/node-host"
 \ , "raichoo/purescript-vim"
 \ , "FrigoEU/psc-ide-vim"
 \ , "snoe/nvim-parinfer.js"
