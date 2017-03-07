@@ -11,6 +11,8 @@ let bundles =
 \ , "FrigoEU/psc-ide-vim"
 \ , "snoe/nvim-parinfer.js"
 \ , "tpope/vim-fugitive"
+\ , "vim-airline/vim-airline"
+\ , "vim-airline/vim-airline-themes"
 \ , "vim-pandoc/vim-pandoc-syntax"
 \ , "vim-pandoc/vim-pandoc"
 \ ]
@@ -33,6 +35,25 @@ endif
 
 " Appearance
 color diokai
+
+"" Airline
+let g:airline_theme = 'solarized'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.maxlinenr = '☰'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+
 
 "" Line numbers
 set number
