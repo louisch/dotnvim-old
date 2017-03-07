@@ -75,7 +75,7 @@ syntax enable
 filetype on
 filetype plugin indent on
 
-"" Vertical ruler
+"" Show line and column number
 set ruler
 
 "" Indentation
