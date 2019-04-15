@@ -1,15 +1,17 @@
+if &compatible
+  set nocompatible
+endif
+
 " Neovim Paths
 let nvimdir = "/home/louis/.config/nvim"
 
-
 " Dein
 let bundles =
-\ [ "Valloric/YouCompleteMe"
+\ [ "Shougo/deoplete.nvim"
+\ , "Valloric/YouCompleteMe"
 \ , "ltlollo/diokai"
-\ , "neovim/node-host"
-\ , "raichoo/purescript-vim"
-\ , "FrigoEU/psc-ide-vim"
-\ , "snoe/nvim-parinfer.js"
+\ , "altercation/vim-colors-solarized"
+\ , 'tikhomirov/vim-glsl'
 \ , "tpope/vim-fugitive"
 \ , "vim-airline/vim-airline"
 \ , "vim-airline/vim-airline-themes"
@@ -17,16 +19,22 @@ let bundles =
 \ , "vim-pandoc/vim-pandoc"
 \ ]
 
-let bundlepath = nvimdir . "/bundle"
+let bundlepath = nvimdir . "/dein"
 execute "set runtimepath+=". bundlepath . "/repos/github.com/Shougo/dein.vim"
 
 if dein#load_state(bundlepath)
   call dein#begin(bundlepath)
 
   call dein#add(bundlepath . "repos/github.com/Shougo/dein.vim")
+
   for bundle in bundles
     call dein#add(bundle)
   endfor
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   call dein#end()
   call dein#save_state()
