@@ -2,8 +2,13 @@ if &compatible
   set nocompatible
 endif
 
+"" Local Machine settings
+runtime local.vim
+
 " Neovim Paths
-let nvimdir = "/home/louis/.config/nvim"
+if !exists(nvimdir)
+    let nvimdir = "~/.config/nvim"
+endif
 
 " Dein
 let bundles =
@@ -113,7 +118,3 @@ let mapleader = ","
 nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>d :call dein#install()<CR>
 nnoremap ; :
-
-
-"" Project-specific
-runtime project-specific.vim
