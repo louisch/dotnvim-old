@@ -42,7 +42,12 @@ endif
 
 
 " Appearance
+" set background=light
 color diokai
+" color solarized
+if $TERM == "linux"
+  set guicursor=
+endif
 
 "" Airline
 let g:airline_theme = 'solarized'
@@ -88,8 +93,8 @@ set ruler
 
 "" Indentation
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set cindent
 
 "" Windows
