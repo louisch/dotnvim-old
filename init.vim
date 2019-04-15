@@ -114,3 +114,6 @@ nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>d :call dein#install()<CR>
 nnoremap ; :
 
+
+"" Project-specific
+runtime project-specific.vim

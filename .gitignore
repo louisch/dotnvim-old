@@ -1,3 +1,4 @@
 bundle/
 dein/
 .netrwhist
+project-specific.vim
