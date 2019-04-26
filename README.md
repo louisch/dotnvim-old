@@ -20,3 +20,5 @@ Go to the YouCompleteMe folder and install YouCompleteMe with your desired optio
 cd ~/.config/nvim/dein/repos/github.com/Valloric/YouCompleteMe
 ./install.py --all
 ```
+
+Powerline fonts are required for the status bar to be rendered properly.
