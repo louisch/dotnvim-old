@@ -13,3 +13,10 @@ Create a local.vim file with `nvimdir` set to wherever you cloned this repositor
 Open neovim, and install dein:
 
 ```:call dein#install()```
+
+Go to the YouCompleteMe folder and install YouCompleteMe with your desired options (for example, the following installs with all language options available. This would require all such languages to be installed on the machine. See [https://github.com/Valloric/YouCompleteMe/blob/master/README.md] for help.). YouCompleteMe requires Python to be installed to work. See their README for help.
+
+```
+cd ~/.config/nvim/dein/repos/github.com/Valloric/YouCompleteMe
+./install.py --all
+```
