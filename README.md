@@ -9,3 +9,7 @@ rm installer.sh  # we can remove the installation script afterwards
 ```
 
 Create a local.vim file with `nvimdir` set to wherever you cloned this repository, if it is not `~/.config/nvim`.
+
+Open neovim, and install dein:
+
+```:call dein#install()```
