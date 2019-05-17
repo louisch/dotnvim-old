@@ -116,5 +116,11 @@ set nofoldenable
 "" Keybindings
 let mapleader = ","
 nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
-nnoremap <leader>d :call dein#install()<CR>
 nnoremap ; :
+
+
+" Plugins
+"" YouCompleteMe
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+"" Dein
+nnoremap <leader>d :call dein#install()<CR>
