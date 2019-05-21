@@ -48,7 +48,11 @@ endif
 
 " Appearance
 " set background=light
-color diokai
+if has#colorscheme('diokai')
+  color diokai
+elseif has#colorscheme('desert')
+  color desert
+endif
 " color solarized
 if $TERM == "linux"
   set guicursor=
