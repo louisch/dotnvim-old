@@ -1,7 +1,3 @@
-if &compatible
-  set nocompatible
-endif
-
 "" Local Machine settings
 runtime local.vim
 
@@ -10,41 +6,17 @@ if !exists(nvimdir)
     let nvimdir = "~/.config/nvim"
 endif
 
-" Dein
-let bundles =
-\ [ "Shougo/deoplete.nvim"
-\ , "Valloric/YouCompleteMe"
-\ , "ltlollo/diokai"
-\ , "altercation/vim-colors-solarized"
-\ , 'tikhomirov/vim-glsl'
-\ , "tpope/vim-fugitive"
-\ , "vim-airline/vim-airline"
-\ , "vim-airline/vim-airline-themes"
-\ , "vim-pandoc/vim-pandoc-syntax"
-\ , "vim-pandoc/vim-pandoc"
-\ ]
-
-let bundlepath = nvimdir . "/dein"
-execute "set runtimepath+=". bundlepath . "/repos/github.com/Shougo/dein.vim"
-
-if dein#load_state(bundlepath)
-  call dein#begin(bundlepath)
-
-  call dein#add(bundlepath . "repos/github.com/Shougo/dein.vim")
-
-  for bundle in bundles
-    call dein#add(bundle)
-  endfor
-
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  call dein#end()
-  call dein#save_state()
-endif
-
+" Specify a directory for plugins
+" - For vim: '~/.vim/plugged'
+" - For Neovim: '~/.local/share/nvim/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'Valloric/YouCompleteMe'
+Plug 'ltlollo/diokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+call plug#end()
 
 " Appearance
 " set background=light
@@ -145,5 +117,9 @@ nnoremap ; :
 " Plugins
 "" YouCompleteMe
 nnoremap <leader>f :YcmCompleter FixIt<CR>
-"" Dein
-nnoremap <leader>d :call dein#install()<CR>
+"" UltiSnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
