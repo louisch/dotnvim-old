@@ -96,7 +96,6 @@ endfunction
 " Call the function after opening a buffer
 autocmd BufReadPost * call TabsOrSpaces()
 
-
 "" Windows
 set splitright
 set splitbelow
@@ -112,6 +111,12 @@ set nofoldenable
 let mapleader = ","
 nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap ; :
+
+"" Filetype-specifc behaviours
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 
 " Plugins
