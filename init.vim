@@ -16,6 +16,7 @@ Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " Appearance
@@ -117,6 +118,7 @@ autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
 
 " Plugins
