@@ -17,6 +17,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'leafgarland/typescript-vim'
+Plug 'othree/csscomplete.vim'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " Appearance
@@ -75,6 +77,8 @@ syntax enable
 "" Show line and column number
 set ruler
 
+"" Omnicompletion
+set omnifunc=syntaxcomplete#Complete
 
 "" Indentation
 set expandtab
@@ -117,6 +121,7 @@ nnoremap ; :
 
 "" Filetype-specifc behaviours
 autocmd FileType vim,html,css,scss,javascript,typescript setlocal shiftwidth=2 tabstop=2
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 
 " Plugins
 "" YouCompleteMe
