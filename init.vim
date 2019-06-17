@@ -65,16 +65,18 @@ match ExtraWhitespace /\s\+$\|\t/
 
 " Behaviour
 
+" Filetype recognition
+filetype on
+filetype plugin indent on
+
 "" Syntax highlighting
 syntax enable
-filetype on
 
 "" Show line and column number
 set ruler
 
 
 "" Indentation
-filetype plugin indent on
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -114,12 +116,7 @@ nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap ; :
 
 "" Filetype-specifc behaviours
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
-
+autocmd FileType vim,html,css,scss,javascript,typescript setlocal shiftwidth=2 tabstop=2
 
 " Plugins
 "" YouCompleteMe
