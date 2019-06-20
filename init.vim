@@ -77,6 +77,11 @@ syntax enable
 "" Show line and column number
 set ruler
 
+"" Highlight current line
+set cursorline
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
+
 "" Omnicompletion
 set omnifunc=syntaxcomplete#Complete
 
