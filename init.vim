@@ -114,6 +114,11 @@ nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>c :close<CR>
 nnoremap ; :
 
+"" Source these files when saving them
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
+
+
 "" Filetype
 autocmd FileType vim,html,css,scss,javascript,typescript,vue setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
