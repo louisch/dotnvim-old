@@ -90,23 +90,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-function TabsOrSpaces()
-    " Determines whether to use spaces or tabs on the current buffer.
-    if getfsize(bufname("%")) > 256000
-        " File is very large, just use the default.
-        return
-    endif
-
-    let numTabs=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^\\t"'))
-    let numSpaces=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^ "'))
-
-    if numTabs > numSpaces
-        setlocal noexpandtab
-    endif
-endfunction
-
 " Call the function after opening a buffer
-autocmd BufReadPost * call TabsOrSpaces()
+autocmd BufReadPost * call has#TabsOrSpaces()
 
 "" Windows
 set splitright
