@@ -117,6 +117,19 @@ nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>c :close<CR>
 nnoremap ; :
 
+"" Prompt to create directory if it does't exist
+augroup vimrc-auto-mkdir
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)
+    if !isdirectory(a:dir)
+          \   && (a:force
+          \       || input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
+augroup END
+
 "" Source these files when saving them
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
