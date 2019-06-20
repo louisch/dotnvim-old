@@ -13,7 +13,8 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/is.vim'
+Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -152,39 +153,29 @@ let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
-"" incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" :h g:incsearch#auto_nohlsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-" Permanent very magic
-let g:incsearch#magic = '\v'
+"" is.vim
+nmap n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+nmap N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+nmap * <Plug>(is-nohl)<Plug>(anzu-star-with-echo)
+nmap # <Plug>(is-nohl)<Plug>(anzu-sharp-with-echo)
 
-" over.vim
+"" over.vim
 let g:over#command_line#substitute#replace_pattern_visually = 1
 nnoremap <leader>s :OverCommandLine<CR>
 
-" beginner Syntastic settings
+"" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
 
-" NERDTree
+"" NERDTree
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFocus<CR>
 nnoremap <leader>nv :NERDTreeVCS<CR>
 
-" Fugitive
+"" Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gm :Gmove<CR>
