@@ -13,6 +13,8 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'haya14busa/incsearch.vim'
+Plug 'osyo-manga/vim-over'
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
@@ -128,3 +130,23 @@ nnoremap <leader>f :YcmCompleter FixIt<CR>
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+"" incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+" Permanent very magic
+let g:incsearch#magic = '\v'
+
+" over.vim
+let g:over#command_line#substitute#replace_pattern_visually = 1
+nnoremap <leader>s :OverCommandLine<CR>
