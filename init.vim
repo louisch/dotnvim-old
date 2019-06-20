@@ -12,10 +12,12 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/csscomplete.vim'
 Plug 'posva/vim-vue'
@@ -113,12 +115,15 @@ nnoremap ; :
 autocmd FileType vim,html,css,scss,javascript,typescript setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 
+
 " Plugins
+
 "" YouCompleteMe
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+
 "" UltiSnips
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
