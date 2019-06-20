@@ -15,6 +15,9 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'haya14busa/incsearch.vim'
 Plug 'osyo-manga/vim-over'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
@@ -155,3 +158,24 @@ let g:incsearch#magic = '\v'
 " over.vim
 let g:over#command_line#substitute#replace_pattern_visually = 1
 nnoremap <leader>s :OverCommandLine<CR>
+
+" beginner Syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
+
+" NERDTree
+nnoremap <leader>nn :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFocus<CR>
+nnoremap <leader>nv :NERDTreeVCS<CR>
+
+" Fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gm :Gmove<CR>
+nnoremap <leader>gg :Ggrep<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gd :Gdiff<CR>
