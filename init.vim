@@ -192,3 +192,5 @@ nnoremap <leader>gg :Ggrep<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gpl :Gpull<CR>
+nnoremap <leader>gps :Gpush<CR>
