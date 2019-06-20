@@ -109,6 +109,7 @@ set nofoldenable
 "" Keybindings
 let mapleader = ","
 nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
+nnoremap <leader>c :close<CR>
 nnoremap ; :
 
 "" Filetype-specifc behaviours
