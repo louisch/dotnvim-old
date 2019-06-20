@@ -112,8 +112,8 @@ nnoremap <leader>v :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>c :close<CR>
 nnoremap ; :
 
-"" Filetype-specifc behaviours
-autocmd FileType vim,html,css,scss,javascript,typescript setlocal shiftwidth=2 tabstop=2
+"" Filetype
+autocmd FileType vim,html,css,scss,javascript,typescript,vue setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 
 
