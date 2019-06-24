@@ -19,6 +19,7 @@ Plug 'osyo-manga/vim-over'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
