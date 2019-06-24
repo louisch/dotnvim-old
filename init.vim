@@ -139,10 +139,12 @@ augroup END
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
 
-
 "" Filetype
 autocmd FileType vim,html,css,scss,javascript,typescript,vue setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+
+"" Minimum amount of lines syntax will look backwards to
+autocmd BufEnter * :syntax sync minlines=200
 
 
 " Plugins
