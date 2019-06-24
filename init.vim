@@ -28,6 +28,7 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/csscomplete.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 call plug#end()
 
