@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
 
+Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/csscomplete.vim'
 Plug 'pangloss/vim-javascript'
@@ -138,7 +139,9 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
 
 "" Filetype
-autocmd FileType vim,html,css,scss,javascript,typescript,vue setlocal shiftwidth=2 tabstop=2
+autocmd FileType
+      \ vim,html,css,scss,javascript,typescript,vue,json
+      \ setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 
 "" Minimum amount of lines syntax will look backwards to
