@@ -13,9 +13,6 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'haya14busa/is.vim'
-Plug 'osyo-manga/vim-anzu'
-Plug 'osyo-manga/vim-over'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
@@ -147,6 +144,15 @@ autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 "" Minimum amount of lines syntax will look backwards to
 autocmd BufEnter * :syntax sync minlines=200
 
+"" incremental search/replace
+set incsearch
+set inccommand=nosplit
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
+
 
 " Plugins
 
@@ -159,16 +165,6 @@ nnoremap <leader>f :YcmCompleter FixIt<CR>
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-"" is.vim
-nmap n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
-nmap N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
-nmap * <Plug>(is-nohl)<Plug>(anzu-star-with-echo)
-nmap # <Plug>(is-nohl)<Plug>(anzu-sharp-with-echo)
-
-"" over.vim
-let g:over#command_line#substitute#replace_pattern_visually = 1
-nnoremap <leader>s :OverCommandLine<CR>
 
 "" Syntastic
 let g:syntastic_always_populate_loc_list = 1
