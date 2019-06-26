@@ -116,8 +116,8 @@ set nofoldenable
 
 "" Keybindings
 let mapleader = ","
-nnoremap <leader>ve :execute 'source' nvimdir . '/init.vim'<CR>
-nnoremap <leader>vs :e $MYVIMRC<CR>
+nnoremap <leader>vs :execute 'source' nvimdir . '/init.vim'<CR>
+nnoremap <leader>ve :e $MYVIMRC<CR>
 nnoremap <leader>c :close<CR>
 nnoremap ; :
 
@@ -153,7 +153,7 @@ set inccommand=nosplit
 augroup vimrc-incsearch-highlight
   autocmd!
   autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
+  autocmd CursorMoved * :set nohlsearch
 augroup END
 
 
