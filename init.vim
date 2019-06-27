@@ -11,7 +11,7 @@ endif
 " - For Neovim: '~/.local/share/nvim/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'Valloric/YouCompleteMe'
+Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -19,6 +19,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
@@ -151,9 +152,10 @@ autocmd BufEnter * :syntax sync minlines=200
 set incsearch
 set inccommand=nosplit
 augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CursorMoved * :set nohlsearch
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CursorMoved * :set nohlsearch
+    autocmd CmdlineLeave /,\? :set hlsearch
 augroup END
 
 
@@ -191,3 +193,9 @@ nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gps :Gpush<CR>
+
+"" vim-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
