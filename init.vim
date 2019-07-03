@@ -154,6 +154,11 @@ set incsearch
 set inccommand=nosplit
 nnoremap zz :nohlsearch<CR>
 
+" Persistent very magic
+nnoremap / /\v
+vnoremap / /\v
+cnoremap sss s/\v
+
 
 " Plugins
 
