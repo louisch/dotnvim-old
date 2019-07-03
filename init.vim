@@ -152,12 +152,7 @@ autocmd BufEnter * :syntax sync minlines=200
 "" incremental search/replace
 set incsearch
 set inccommand=nosplit
-augroup vimrc-incsearch-highlight
-    autocmd!
-    autocmd CmdlineEnter /,\? :set hlsearch
-    autocmd CursorMoved * :set nohlsearch
-    autocmd CmdlineLeave /,\? :set hlsearch
-augroup END
+nnoremap zz :nohlsearch<CR>
 
 
 " Plugins
