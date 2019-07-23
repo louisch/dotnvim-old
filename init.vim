@@ -26,6 +26,7 @@ Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'elzr/vim-json'
+Plug 'gregsexton/MatchTag'
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/csscomplete.vim'
 Plug 'mxw/vim-jsx'
