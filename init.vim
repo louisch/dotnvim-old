@@ -117,6 +117,9 @@ set smartcase
 "" Folds
 set nofoldenable
 
+"" Disable swap
+set noswapfile
+
 "" Keybindings
 let mapleader = ","
 nnoremap <leader>vs :execute 'source' nvimdir . '/init.vim'<CR>
