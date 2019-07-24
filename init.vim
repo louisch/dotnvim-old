@@ -147,15 +147,13 @@ autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
 "" Filetype
 autocmd FileType
       \ vim,
-      \ html,
-      \ css,
-      \ scss,
-      \ javascript,
-      \ typescript,
-      \ vue,
-      \ json,
-      \ php,
-      \ sh
+       \html,css,javascript,
+       \scss,
+       \typescript,
+       \vue,
+       \json,
+       \php,
+       \sh
       \ setlocal shiftwidth=2 tabstop=2
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 
