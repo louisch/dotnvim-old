@@ -12,6 +12,7 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
+Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
