@@ -125,7 +125,7 @@ set noswapfile
 let mapleader = ","
 nnoremap <leader>vs :execute 'source' nvimdir . '/init.vim'<CR>
 nnoremap <leader>ve :e $MYVIMRC<CR>
-nnoremap <leader>c :close<CR>
+nnoremap <leader>x :close<CR>
 nnoremap ; :
 
 "" Prompt to create directory if it does't exist
