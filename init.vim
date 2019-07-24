@@ -144,6 +144,7 @@ augroup END
 "" Source these files when saving them
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufWritePost $HOME/.dotfiles/* call system('fresh')
+autocmd BufWritePost $HOME/.dotfiles/tmux/tmux.conf call system('tmux source-file ~/tmux.conf')
 
 "" Filetype
 autocmd FileType
@@ -212,7 +213,7 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
 "" Fugitive
