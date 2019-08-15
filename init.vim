@@ -29,13 +29,8 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'elzr/vim-json'
 Plug 'gregsexton/MatchTag'
-Plug 'leafgarland/typescript-vim'
-Plug 'othree/csscomplete.vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Appearance
