@@ -25,13 +25,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'ycm-core/YouCompleteMe'
 
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'ltlollo/diokai'
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'gregsexton/MatchTag'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
+
 
 " Appearance
 " set background=light
@@ -45,23 +46,18 @@ if $TERM == "linux"
   set guicursor=
 endif
 
-"" Airline
-let g:airline_theme = 'solarized'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+" Lightline
+" As lightline includes mode information, do not show mode information in
+" the last line
+set noshowmode
+" As vim-buffet provides the tabline, disable lightline's tabline
+let g:lightline = {
+  \ 'colorscheme': 'solarized',
+  \ 'enable': {
+  \   'statusline': 1,
+  \   'tabline': 0
+  \ }
+  \ }
 
 
 "" Line numbers
@@ -237,7 +233,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "" vim-buffet
-let g:buffet_always_show_tabline = 0
+let g:buffet_always_show_tabline = 1
 let g:buffet_show_index = 1
 let g:buffet_powerline_separators = 1
 let g:buffet_tab_icon = "\uf00a"
